@@ -1,0 +1,29 @@
+body {
+    padding: 25px;
+    font-size: 25px;
+  
+   /*
+  font-style: ;
+  
+  */
+  
+   background-image: url("https://i.imgur.com/0y9XpCp.png");
+   
+  
+  }
+  
+  
+    
+    background-image {
+    max-width: 800px
+    }
+  
+    .text-light {
+      color: pink;
+  }
+  
+  input[type="submit"] {
+    background-color: pink;
+  }
+  
+  
