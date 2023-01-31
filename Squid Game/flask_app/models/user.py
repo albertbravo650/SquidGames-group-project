@@ -50,6 +50,22 @@ class User:
             return False
         return cls(result[0])
 
+    @classmethod
+    def get_user_with_players( cls , data ):
+        query = "SELECT * FROM users LEFT JOIN players ON players.users_id = users.id WHERE users.id = %(id)s;"
+        results = connectToMySQL(mydb).query_db( query , data )
+        players_user = []
+        for column in results:
+            player_data = {
+                "player_id" : column["players.id"],
+                "name" : column["name"],
+                "age" : column["age"],
+                "image" : column["image"],
+                "gender" : column["gender"]
+            }
+            players_user.append(player_data)
+        return players_user
+
     @staticmethod
     def validate_registration(user):
         is_valid = True # we assume this is true

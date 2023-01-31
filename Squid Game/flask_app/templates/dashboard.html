@@ -4,56 +4,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Games</title>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <!--https://login.codingdojo.com/m/506/12467/87464
-"<img src="{{ url_for('static', filename='Image/joker png.png') }}">>-->
-
-    
-  <h1 class="text-center">Welcome {{user.first_name}}!!!</h1>
-  
-
-
-  <a href="/logout" class="btn btn-info">Logout</a>
-
-
-</body>
-    
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Squid Game</title>
-
-
-
-</head>
-
-<body>
-  
-
-
-
-  <script src="./js/script.js"></script>
-
-  <div class="webpage"></div>
-
-  <center><h1>Squid Game</h1></center>
-  <div class="body">
-    
- </body>
-    
+  <div class="container-fluid">
+    <div class="header">
+      <div class="logout">
+        <a href="/logout" class="btn btn-info">Logout</a>
+      </div>
+      <h1 class="text-center">Welcome {{user.first_name}}!!!</h1>
+      <h1 class="text-center">Squid Game</h1>
+      <h2 class="text-center">Red Light, Green Light</h2>
     </div>
-    
-                <div class="body">
-            
-</html>
-<script src="script.js"></script>
+    <div class="buttons">
+      <a href="/add" class="btn btn-warning">Add Player</a>
+      <button class="btn btn-success">Begin</button>
+      <button class="btn btn-danger">Reset</button>
+    </div>
+    <div class="players">
+      {% for player in users_players %}
+        {% if player.name != none %}
+          <div>
+            <div>{{player.image}}</div>
+            <div><a href="/dashboard}}">{{player.name}}</a></div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <script src="script.js"> </script>
 </body>
 </html>

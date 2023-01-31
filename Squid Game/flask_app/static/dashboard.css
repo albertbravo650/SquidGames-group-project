@@ -1,0 +1,11 @@
+.logout {
+    display: flex;
+    justify-content: end;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 15% 0px 15%;
+    margin-top: 50px; 
+}

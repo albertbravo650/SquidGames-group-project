@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Add Player</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="top">
+            <div class="logout">
+                <a href="/logout" class="btn btn-info">Logout</a>
+            </div>
+            <h2>Add A Player</h2>
+        </div>
+        <div class="bottom">
+            <form action="/add_player" method="POST">
+                {% with messages = get_flashed_messages(category_filter=['add_player']) %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div class="formrow">
+                    <div class="input">
+                        <div>
+                            <label for="name">Name:</label>
+                        </div>
+                        <input type="text" name="name" id="name"></input>
+                    </div>
+                    <div class="input">
+                        <div>
+                            <label for="age">Age:</label>
+                        </div>
+                        <input type="number" value="0" name="age" id="age"></input>
+                    </div>
+                    <div class="input">
+                        <div>
+                            <label for="image">Image URL:</label>
+                        </div>
+                        <input type="text" name="image" id="image"></input>
+                    </div>
+                    <div class="input">
+                        <div>
+                            <label for="gender">Gender:</label>
+                        </div>
+                        <input type="radio" name="gender" id="gender"></input>
+                    </div>
+                </div>
+                <div class="bottom_button">
+                    <input type="submit" value="Add" class="btn btn-success">
+                </div>
+            </form>
+            <a href="/dashboard" class="btn btn-warning">Go Back</a>
+        </div>
+    </div>
+    <script src="script.js"> </script>
+</body>
+</html>
