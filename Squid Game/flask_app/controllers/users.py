@@ -33,7 +33,39 @@ def add_player():
         "age" : request.form["age"],
         "image" : request.form["image"],
         "gender" : request.form["gender"],
-        "user_id": session["user_id"]
+        "users_id": session["user_id"]
     }
     player.Player.save(data)
+    return redirect('/dashboard')
+
+@app.route("/edit/<int:id>")
+def edit(id):
+    if 'user_id' not in session:
+        return redirect('/')
+    data = {
+        "id": id
+    }
+    print("hi", data)
+    onePlayer = player.Player.get_one_player(data)
+    print("testinggg",onePlayer.name)
+    return render_template("edit.html", onePlayer=onePlayer)
+
+@app.route('/edit_player', methods=['POST'])
+def update():
+    if 'user_id' not in session:
+        return redirect('/')
+    id = request.form['id']
+    if not player.Player.validate_player(request.form):
+        return redirect(f'/edit/{id}')
+    player.Player.update(request.form)
+    return redirect('/dashboard')
+
+@app.route('/destroy/<int:id>')
+def destroy(id):
+    if 'user_id' not in session:
+        return redirect('/')
+    data = {
+        "id":id
+    }
+    player.Player.destroy(data)
     return redirect('/dashboard')

@@ -23,12 +23,17 @@
       <button class="btn btn-success">Begin</button>
       <button class="btn btn-danger">Reset</button>
     </div>
-    <div class="players">
+    <div class="container players">
       {% for player in users_players %}
         {% if player.name != none %}
-          <div>
-            <div>{{player.image}}</div>
-            <div><a href="/dashboard}}">{{player.name}}</a></div>
+          <div class="player">
+            <div class="playerimg">
+              <img src="{{player.image}}" alt="image load error">
+            </div>
+            <a class="playerlink" href="/edit/{{player['player_id']}}">{{player.name}}</a>
+            <div class="delete">
+              <a class="btn btn-danger" href="/destroy/{{player['player_id']}}">delete</a>
+            </div>
           </div>
         {% endif %}
       {% endfor %}

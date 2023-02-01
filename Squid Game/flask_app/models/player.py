@@ -43,7 +43,7 @@ class Player:
             flash("Name cannot be blank", "add_player")
             is_valid = False
         if (int(player['age'])) <= 0:
-            flash("Enter age", "add_player")
+            flash("Enter age. Must be greater than 0", "add_player")
             is_valid = False
         if len(player['image']) < 1:
             flash("Image URL cannot be blank", "add_player")
