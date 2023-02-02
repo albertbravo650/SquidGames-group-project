@@ -1,19 +1,51 @@
 body {
-  padding: 25px;
-  font-size: 25px;
+  /* padding: 25px;
+  font-size: 25px; */
   background-image: url("https://i.imgur.com/0y9XpCp.png");
-}
-  
-background-image {
-  max-width: 800px
-}
-
-.text-light {
-  color: pink;
+  background-size: 25%;
+  display: flex;
+  justify-content: center;
 }
 
-input[type="submit"] {
+.form-label {
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+input {
   background-color: pink;
 }
-  
-  
+
+h1 {
+  text-align: center;
+  margin-top: 15px;
+  border: 2px solid pink;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: teal;
+}
+
+.loginWrapper {
+  border: 2px solid lightgray;
+  box-shadow: 5px 5px 10px black;
+  border-radius: 5px;
+  width: 40%;
+  background-color: rgba(38, 119, 114, 0.932);
+  margin-top: 15px;
+  color: rgb(255, 117, 149);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  border: 2px solid rgba(255, 192, 203, 0.521);
+}
+
+#login {
+  margin-top: 45px;
+}
