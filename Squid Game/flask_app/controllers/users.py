@@ -69,3 +69,51 @@ def destroy(id):
     }
     player.Player.destroy(data)
     return redirect('/dashboard')
+
+@app.route('/green')
+def run():
+    if 'user_id' not in session:
+        return redirect('/')
+    data = {
+        "id": 2
+    }
+    print("hi", data)
+    onePlayer = player.Player.get_one_player(data)
+    print("testinggg",onePlayer.name)
+    return render_template('greenLight.html', onePlayer=onePlayer )
+
+@app.route('/red')
+def eliminated():
+    if 'user_id' not in session:
+        return redirect('/')
+    data = {
+        "id": 3
+    }
+    print("hi", data)
+    onePlayer = player.Player.get_one_player(data)
+    print("testinggg",onePlayer.name)
+    return render_template('redLight.html', onePlayer=onePlayer )
+
+@app.route('/fallen')
+def fallenStatus():
+    if 'user_id' not in session:
+        return redirect('/')
+    data = {
+        "id": 3
+    }
+    print("hi", data)
+    onePlayer = player.Player.get_one_player(data)
+    print("testinggg",onePlayer.name)
+    return render_template('fallen.html', onePlayer=onePlayer )
+
+@app.route('/winner')
+def displayWinner():
+    if 'user_id' not in session:
+        return redirect('/')
+    data = {
+        "id": 4
+    }
+    print("hi", data)
+    onePlayer = player.Player.get_one_player(data)
+    print("testinggg",onePlayer.name)
+    return render_template('win.html', onePlayer=onePlayer )

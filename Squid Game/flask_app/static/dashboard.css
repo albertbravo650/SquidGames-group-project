@@ -1,6 +1,10 @@
+.container-fluid {
+    margin: 20px;
+}
+
 .logout {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 .buttons {
@@ -46,4 +50,8 @@ img {
     display: flex;
     justify-content: center;
     margin-top: 15px;
+}
+
+.eliminated {
+    filter: grayscale(100%);
 }
