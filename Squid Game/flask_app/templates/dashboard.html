@@ -12,6 +12,7 @@
   <div class="container-fluid">
     <div class="header">
       <div class="logout">
+        <a href="/dashboard" class="btn btn-link">Home</a>
         <a href="/logout" class="btn btn-info">Logout</a>
       </div>
       <h1 class="text-center">Welcome {{user.first_name}}!!!</h1>
@@ -20,8 +21,8 @@
     </div>
     <div class="buttons">
       <a href="/add" class="btn btn-warning">Add Player</a>
-      <button class="btn btn-success">Begin</button>
-      <button class="btn btn-danger">Reset</button>
+      <a href="/green" class="btn btn-success">Green Light</a>
+      <button class="btn btn-light">Reset</button>
     </div>
     <div class="container players">
       {% for player in users_players %}
@@ -38,7 +39,9 @@
         {% endif %}
       {% endfor %}
     </div>
+    <!-- img {
+  filter: grayscale(100%);
+} -->
   </div>
-  <script src="script.js"> </script>
 </body>
 </html>
