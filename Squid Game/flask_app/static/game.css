@@ -15,9 +15,17 @@
     margin-bottom: 50px; 
 }
 
+.resetButton {
+    display: flex;
+    justify-content: center;
+    margin: 0px 15% 0px 15%;
+    margin-top: 50px;
+    margin-bottom: 50px; 
+}
+
 .players {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .playerimg {
